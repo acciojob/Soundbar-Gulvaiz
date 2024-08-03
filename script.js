@@ -1,27 +1,33 @@
-//your JS code here. If required.
-let buttons = document.querySelectorAll(".buttons")
+// Select all buttons with class 'btn'
+let buttons = document.querySelectorAll(".btn");
 let currentSound;
 
-buttons.forEach(() => {
-	  bttn.addEventListener("click", () => {
-		  const sound = bttn.getAttribute("data-sound")
-		  playSound(sound)
-	  })
-})
+// Add event listeners to each button
+buttons.forEach(bttn => {
+    bttn.addEventListener("click", () => {
+        const sound = bttn.getAttribute("data-sound");
+        playSound(sound);
+    });
+});
 
-let stop = document.querySelector(".stop")
+// Select the stop button
+let stopButton = document.querySelector(".stop");
 
-stop.addEventListener("click", stop())
+// Add event listener to the stop button
+stopButton.addEventListener("click", stop);
 
+// Function to play the sound
 function playSound(sound) {
-	 stop()
-	currentSound = new Audio(`${sound}.mp3`)
-	currentSound.play()
+    stop(); // Stop any currently playing sound
+    // Create a new audio object and play the sound
+    currentSound = new Audio(`./sounds/${sound}.mp3`);
+    currentSound.play();
 }
 
-function stop(sound){
-   if(currentSound){
-    currentSound.pause()
-	currentSound.currentTime = 0
-   }
+// Function to stop the sound
+function stop() {
+    if (currentSound) {
+        currentSound.pause();
+        currentSound.currentTime = 0;
+    }
 }
