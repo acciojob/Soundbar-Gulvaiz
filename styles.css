@@ -1,1 +1,9 @@
 /*  your css code here. If applicable */
+body{
+	 text-align: center
+}
+
+.btn, .stop{
+	padding: 9px;
+	margin: 8px;
+}
